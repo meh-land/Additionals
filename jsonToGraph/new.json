@@ -1,0 +1,1 @@
+{"name":"new","nodes":[{"id":"node_0","type":"input","position":{"x":366.75,"y":-48.75},"data":{"label":"input node"},"width":150,"height":40},{"id":"node_1","type":"default","position":{"x":344.25,"y":29.75},"data":{"label":"default node"},"width":150,"height":40}],"edges":[]}

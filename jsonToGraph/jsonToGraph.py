@@ -1,5 +1,13 @@
 import json
 
+class node:
+    def __init__(self, id, label="default node"):
+        self.id = id
+        self.label = label
+        self.adjacent_nodes = []
+        self.read_json(json_file)
+
+
 class Graph:
     def __init__(self, json_file):
         self.nodes = []

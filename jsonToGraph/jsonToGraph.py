@@ -1,4 +1,6 @@
 import json
+import numpy as np
+import os
 
 class Node:
     def __init__(self, node_id, label):
@@ -18,7 +20,16 @@ class Graph:
     def __init__(self, json_file):
         self.nodes = []
         self.node_map = {}
+        self.map_name = ""
         self.read_json(json_file)
+        self.N = len(self.nodes)
+        self.adj_matrix = np.identity(self.N)
+        self.populate_adj_mat()
+        adj_path = ""
+
+        # Save the array to a text file
+        np.savetxt(file_path, array)
+
 
     def read_json(self, json_file):
         # Open and read the JSON file
@@ -47,3 +58,14 @@ class Graph:
     def get_nodes(self):
         # Return Nodes object (Array of Nodes)
         return self.nodes
+    
+    def populate_adj_mat(self):
+        # Loop over all starting nodes
+        for n in range(self.N):
+            curr_node = self.nodes[n]
+            # Loop to populate adj matrix
+            for i in range(self.N):
+                if self.nodes[i] in curr_node.adjacent_nodes:
+                    self.adj_matrix[n, i] = 1
+
+

@@ -1,4 +1,7 @@
 from jsonToGraph import Graph
+import os
 
-graph = Graph(r'C:\xampp\htdocs\GP_laravel\storage\app\maps\Untitled.json')
-print(graph.get_nodes())
+current_dir = os.path.dirname(os.path.realpath(__file__))
+file_path = os.path.join(current_dir, 'new.json')
+graph = Graph(file_path)
+print(graph.adj_matrix)

@@ -22,6 +22,7 @@ class Graph:
         self.node_map = {}
         self.map_name = ""
         self.read_json(json_file)
+        self.read_json(json_file)
         self.N = len(self.nodes)
         self.adj_matrix = np.identity(self.N)
         self.populate_adj_mat()
@@ -35,6 +36,7 @@ class Graph:
         # Open and read the JSON file
         with open(json_file, 'r') as file:
             data = json.load(file)
+            self.map_name = data['name']
             # Load nodes and edges from the JSON data
             self.load_nodes(data['nodes'])
             self.load_edges(data['edges'])

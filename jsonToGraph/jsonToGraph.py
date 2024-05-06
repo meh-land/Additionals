@@ -28,8 +28,9 @@ class Graph:
         self.populate_adj_mat()
         adj_path = ""
 
-        # Save the array to a text file
-        np.savetxt(file_path, array)
+        # Save adjacency matrix to file
+        adj_mat_filename = os.getenv("MATRIX_DIR") + self.map_name
+        np.savetxt(adj_mat_filename, self.adj_matrix)
 
 
     def read_json(self, json_file):

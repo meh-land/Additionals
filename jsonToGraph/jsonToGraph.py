@@ -13,7 +13,7 @@ class Node:
 
     def __repr__(self):
         adjacent_ids = [node.id for node in self.adjacent_nodes]  # Collect only IDs of adjacent nodes
-        return f"[id={self.id}, label={self.label}, adjacent_nodes={adjacent_ids}]"
+        return f"id={self.id}, label={self.label}, adjacent_nodes={adjacent_ids}"
 
 
 class Graph:
@@ -26,12 +26,16 @@ class Graph:
         self.N = len(self.nodes)
         self.adj_matrix = np.identity(self.N)
         self.populate_adj_mat()
-        adj_path = ""
 
         # Save adjacency matrix to file
         adj_mat_filename = os.getenv("MATRIX_DIR") + self.map_name
         np.savetxt(adj_mat_filename, self.adj_matrix)
 
+    def __repr__(self) -> str:
+        representation = ""
+        for n in self.nodes:
+            representation += n.__repr__() + "\n"
+        return representation
 
     def read_json(self, json_file):
         # Open and read the JSON file

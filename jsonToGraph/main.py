@@ -12,4 +12,4 @@ matrix_dir = os.getenv("MATRIX_DIR")
 file_name = "new.json"
 file_path = map_dir + file_name
 graph = Graph(file_path)
-print(graph.adj_matrix)
+print(graph)

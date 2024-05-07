@@ -3,9 +3,11 @@ import numpy as np
 import os
 
 class Node:
-    def __init__(self, node_id, label):
+    def __init__(self, node_id, label, X, Y):
         self.id = node_id
         self.label = label
+        self.X = X
+        self.Y = Y
         self.adjacent_nodes = []
 
     def add_adjacent(self, node):
@@ -13,7 +15,7 @@ class Node:
 
     def __repr__(self):
         adjacent_ids = [node.id for node in self.adjacent_nodes]  # Collect only IDs of adjacent nodes
-        return f"id={self.id}, label={self.label}, adjacent_nodes={adjacent_ids}"
+        return f"id={self.id}, label={self.label}, position=({self.X} , {self.Y}), adjacent_nodes={adjacent_ids}"
 
 
 class Graph:
@@ -21,7 +23,6 @@ class Graph:
         self.nodes = []
         self.node_map = {}
         self.map_name = ""
-        self.read_json(json_file)
         self.read_json(json_file)
         self.N = len(self.nodes)
         self.adj_matrix = np.identity(self.N)
@@ -48,7 +49,7 @@ class Graph:
 
     def load_nodes(self, nodes):
         for node in nodes:
-            node_obj = Node(node['id'], node['data']['label'])
+            node_obj = Node(node['id'], node['data']['label'], node['data']['X'], node['data']['Y'])
             self.nodes.append(node_obj)
             self.node_map[node['id']] = node_obj
 

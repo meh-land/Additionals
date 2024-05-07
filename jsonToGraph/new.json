@@ -1,117 +1,168 @@
 {
-    "name": "my_map",
-    "nodes": [
-        {
-            "id": "node_1",
-            "type": "input",
-            "position": {
-                "x": 117.43570656416108,
-                "y": -165.37056247552934
-            },
-            "data": {
-                "label": "input node"
-            },
-            "width": 150,
-            "height": 40,
-            "selected": false,
-            "positionAbsolute": {
-                "x": 117.43570656416108,
-                "y": -165.37056247552934
-            },
-            "dragging": false
-        },
-        {
-            "id": "node_2",
-            "type": "default",
-            "position": {
-                "x": 32.66769236392298,
-                "y": -1.9427943199047206
-            },
-            "data": {
-                "label": "default node"
-            },
-            "width": 150,
-            "height": 40,
-            "selected": false,
-            "positionAbsolute": {
-                "x": 32.66769236392298,
-                "y": -1.9427943199047206
-            },
-            "dragging": false
-        },
-        {
-            "id": "node_3",
-            "type": "output",
-            "position": {
-                "x": 73.05855382751463,
-                "y": 124.13242556042866
-            },
-            "data": {
-                "label": "output node"
-            },
-            "width": 150,
-            "height": 40,
-            "selected": true,
-            "positionAbsolute": {
-                "x": 73.05855382751463,
-                "y": 124.13242556042866
-            },
-            "dragging": false
-        },
-        {
-            "id": "node_4",
-            "type": "default",
-            "position": {
-                "x": 344.7074594816675,
-                "y": 31.0424147618474
-            },
-            "data": {
-                "label": "default node"
-            },
-            "width": 150,
-            "height": 40
-        },
-        {
-            "id": "node_5",
-            "type": "input",
-            "position": {
-                "x": 396.7074594816675,
-                "y": -113.95758523815262
-            },
-            "data": {
-                "label": "input node"
-            },
-            "width": 150,
-            "height": 40
-        },
-        {
-            "id": "node_6",
-            "type": "output",
-            "position": {
-                "x": 376.7074594816675,
-                "y": 188.04241476184743
-            },
-            "data": {
-                "label": "output node"
-            },
-            "width": 150,
-            "height": 40
-        }
-    ],
-    "edges": [
-        {
-            "source": "node_1",
-            "sourceHandle": null,
-            "target": "node_2",
-            "targetHandle": null,
-            "id": "reactflow__edge-node_1-node_2"
-        },
-        {
-            "source": "node_2",
-            "sourceHandle": null,
-            "target": "node_3",
-            "targetHandle": null,
-            "id": "reactflow__edge-node_2-node_3"
-        }
-    ]
+  "name": "position map",
+  "nodes": [
+    {
+      "id": "node_2",
+      "type": "input",
+      "position": {
+        "x": 43.102548275291184,
+        "y": -211.3268014200238
+      },
+      "data": {
+        "label": "input node",
+        "X": 20,
+        "Y": 10
+      },
+      "width": 150,
+      "height": 40,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 43.102548275291184,
+        "y": -211.3268014200238
+      },
+      "dragging": false
+    },
+    {
+      "id": "node_3",
+      "type": "default",
+      "position": {
+        "x": -52.085022601116336,
+        "y": -80.52061169719073
+      },
+      "data": {
+        "label": "default node",
+        "X": 40,
+        "Y": 100
+      },
+      "width": 150,
+      "height": 40,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -52.085022601116336,
+        "y": -80.52061169719073
+      },
+      "dragging": false
+    },
+    {
+      "id": "node_4",
+      "type": "default",
+      "position": {
+        "x": 216.3003513166227,
+        "y": -101.48541298149817
+      },
+      "data": {
+        "label": "default node",
+        "X": 50,
+        "Y": 60
+      },
+      "width": 150,
+      "height": 40,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 216.3003513166227,
+        "y": -101.48541298149817
+      },
+      "dragging": false
+    },
+    {
+      "id": "node_5",
+      "type": "output",
+      "position": {
+        "x": 215.7409541138611,
+        "y": 19.614664233490373
+      },
+      "data": {
+        "label": "output node",
+        "X": 8,
+        "Y": 8
+      },
+      "width": 150,
+      "height": 40,
+      "selected": true,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 215.7409541138611,
+        "y": 19.614664233490373
+      }
+    },
+    {
+      "id": "node_6",
+      "type": "default",
+      "position": {
+        "x": -53.73941601975011,
+        "y": 65.52747457383349
+      },
+      "data": {
+        "label": "default node",
+        "X": 20,
+        "Y": 80
+      },
+      "width": 150,
+      "height": 40,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -53.73941601975011,
+        "y": 65.52747457383349
+      },
+      "dragging": false
+    },
+    {
+      "id": "node_7",
+      "type": "output",
+      "position": {
+        "x": -55.24882328453718,
+        "y": 169.97153963053847
+      },
+      "data": {
+        "label": "output node",
+        "X": 100,
+        "Y": 41
+      },
+      "width": 150,
+      "height": 40,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": -55.24882328453718,
+        "y": 169.97153963053847
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_2",
+      "sourceHandle": null,
+      "target": "node_3",
+      "targetHandle": null,
+      "id": "reactflow__edge-node_2-node_3"
+    },
+    {
+      "source": "node_2",
+      "sourceHandle": null,
+      "target": "node_4",
+      "targetHandle": null,
+      "id": "reactflow__edge-node_2-node_4"
+    },
+    {
+      "source": "node_3",
+      "sourceHandle": null,
+      "target": "node_6",
+      "targetHandle": null,
+      "id": "reactflow__edge-node_3-node_6"
+    },
+    {
+      "source": "node_4",
+      "sourceHandle": null,
+      "target": "node_5",
+      "targetHandle": null,
+      "id": "reactflow__edge-node_4-node_5"
+    },
+    {
+      "source": "node_6",
+      "sourceHandle": null,
+      "target": "node_7",
+      "targetHandle": null,
+      "id": "reactflow__edge-node_6-node_7"
+    }
+  ]
 }

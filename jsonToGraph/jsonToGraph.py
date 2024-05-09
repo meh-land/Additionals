@@ -95,4 +95,6 @@ class Graph:
                     # Put the cost of moving from n1 to n2 as the distance between them
                     self.cost_matrix[i,j] = np.linalg.norm(n1.pose - n2.pose)
 
+        np.fill_diagonal(self.cost_matrix, 0)
+
 

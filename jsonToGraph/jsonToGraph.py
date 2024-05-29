@@ -1,6 +1,7 @@
 import json
 import numpy as np
 import os
+import dijkstar as dj
 
 class Node:
     def __init__(self, node_id, label, X, Y):
@@ -24,12 +25,15 @@ class Graph:
         self.nodes = []
         self.node_map = {}
         self.map_name = ""
+        self.dj_graph = dj.Graph()
         self.read_json(json_file)
         self.N = len(self.nodes)
         self.adj_matrix = np.identity(self.N)
         self.cost_matrix = np.full((self.N, self.N), np.inf)
         self.populate_adj_mat()
         self.populate_cost_mat()
+        self.populate_dj_graph()
+        
 
         # Save adjacency matrix to file
         adj_mat_filename = os.getenv("MATRIX_DIR") + self.map_name + ".adj"
@@ -96,5 +100,25 @@ class Graph:
                     self.cost_matrix[i,j] = np.linalg.norm(n1.pose - n2.pose)
 
         np.fill_diagonal(self.cost_matrix, 0)
+
+    def populate_dj_graph(self):
+        for i1 in range(self.N):
+            for i2 in range(self.N):
+                if i1 == i2:
+                    continue
+                elif self.adj_matrix[i1, i2] != 0: # If there is an edge connecting these nodes
+                    self.dj_graph.add_edge(self.nodes[i1], self.nodes[i2], self.cost_matrix[i1, i2])
+
+    def get_path(self, label1, label2):
+        # get both nodes
+        for i in range(self.N):
+            if self.nodes[i].label == label1:
+                n1 = self.nodes[i]
+            elif self.nodes[i].label == label2:
+                n2 = self.nodes[i]
+
+        return dj.find_path(self.dj_graph, n1, n2)
+
+
 
 

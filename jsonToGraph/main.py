@@ -1,4 +1,3 @@
-
 from jsonToGraph import Graph
 import os
 from dotenv import load_dotenv
@@ -10,7 +9,8 @@ load_dotenv()
 map_dir = os.getenv("MAPS_DIR")
 matrix_dir = os.getenv("MATRIX_DIR")
 
-file_name = "new.json"
+file_name = "myMap.json"
 file_path = map_dir + file_name
 graph = Graph(file_path)
-print(graph)
+print(graph.get_path('Entrance', 'node100').nodes)
+

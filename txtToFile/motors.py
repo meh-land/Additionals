@@ -17,7 +17,7 @@ def Logs(filename):
         except Exception as e:
             print(f"An error occurred: {e}")
         
-        time.sleep(10)
+        time.sleep(1)
 
 # change path to be storage\app in dashboard backend  directory
 filename = "C:\\xampp\\htdocs\\dashboard_ros\\storage\\app\\Motors.txt"
